@@ -22,6 +22,7 @@ export function Provider({ children }: { children: ReactNode }) {
       resolveMentionSuggestions={async ({ text, roomId }) => {
         const roomUsers = await getDocumentUsers({
           roomId,
+          // eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain
           currentUser: clerkUser?.emailAddresses[0].emailAddress!,
           text,
         });
